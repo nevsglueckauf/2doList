@@ -9,6 +9,7 @@ VALUES (1, 'Normal')
 
 
 CREATE TABLE task (
+    
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     priority INTEGER NULL DEFAULT 0,
     title TEXT NOT NULL,
