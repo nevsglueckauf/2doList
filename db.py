@@ -1,13 +1,17 @@
 import sqlite3
-from typing import Any, Self
+from typing import Any, Self,  Dict, List, Optional, Sequence, Tuple, Union
 
 class Db:
+    conn: sqlite3.Connection
+    csr: sqlite3.Cursor
+    
     def __init__(self):
         
         self.conn = sqlite3.connect('data/2do.db', autocommit=True)
         self.conn.row_factory = sqlite3.Row 
 
         self.crs  = self.conn.cursor()
+        self.exec('PRAGMA foreign_keys = 1')
 
     def exec(self, query:str, param:list=[]) -> Self:
         self.res = self.crs.execute(query, param)
@@ -30,33 +34,86 @@ class Db:
     def set_res(self, res):
         self.res
     
+class Generic():
+    """ 
+        Collection of generic queries - to be used with several other entity classes
+    """
+    relation:str
+    
+    def __init__(self, db:Db, relation:str):
+        self.db = db
+        self.relation = relation
+    
+    def del_by_id(self, id:int) -> None:
+        tpl = "DELETE FROM " + self.relation + " WHERE id = ?"
+        self.db.res = self.db.crs.execute(tpl, [id])
+        
+    def get_where(self, where:str) -> list:
+        tpl = "SELECT * FROM " + self.relation + f" WHERE {where}"
+        #print(tpl)
+        #exit()
+        self.db.res = self.db.crs.execute(tpl)
+        return self.db.res.fetchall()
+        
+    def change(self, dta:dict, id:id) -> None:
+        tpl = "UPDATE " + self.relation + " SET "
+        tmp = []
+        for k, v in dta.items():
+            print(k,v)
+            tmp.append(k + " = '" + str(v) + "'") 
+        tpl += ', '.join(tmp)
+        tpl += f" WHERE id={id}"
+        print(tpl)
+        self.db.crs.execute(tpl)
+    
     
 class Category():
-    relation = 'category'
+    relation:str = 'category'
+    gen:Generic
     
     def __init__(self, db):
         self.db = db
-    
-    def new(self, title:str):
+        self.gen = Generic(self.db, self.relation)
+        
+    def new(self, title:str) -> None:
+        """ Inserting new item
+
+        Args:
+            title (str): category title
+            
+        FIXME: returning created id
+        """
         tpl = "INSERT INTO " + self.relation +" (title) VALUES (?)"
         self.db.res = self.db.crs.execute(tpl, [title])
         
-    def get_all(self):
+    def get_all(self) -> list:
         self.db.res = self.db.crs.execute("SELECT * FROM " + self.relation)
         return self.db.get_all()
     
 class Task():
-    relation = 'task'
-    
+    relation:str = 'task'
+    gen:Generic
     def __init__(self, db):
         self.db = db
+        self.gen = Generic(self.db, self.relation)
+        
     
-    
-    def new(self, title:str, desc:str, cat_id:int, start='', end=''):
+    def new(self, title:str, desc:str, cat_id:int, start='', end='') -> None:
+        """nserting new item
+
+        FIXME: returning created id
+
+        Args:
+            title (str): _description_
+            desc (str): _description_
+            cat_id (int): _description_
+            start (str, optional): _description_. Defaults to ''.
+            end (str, optional): _description_. Defaults to ''.
+        """
         tpl = "INSERT INTO " + self.relation + "  (title, description, category_id, start_dt, end_dt) VALUES (?, ?, ?, ?, ?)"
         self.db.res = self.db.crs.execute(tpl, [title, desc, cat_id, start, end])
     
-    def get_all(self):
+    def get_all(self) -> list:
         self.db.res = self.db.crs.execute("SELECT * FROM " + self.relation)
         return self.db.get_all()
     
