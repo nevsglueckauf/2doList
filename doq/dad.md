@@ -1,7 +1,6 @@
 # Design & Architecture Dossier
 
 ## Klassen
-
 ```mermaid
 classDiagram
 
@@ -14,6 +13,26 @@ classDiagram
         +  set_res(self, res)
     }
 
+    
+    class Generic{
+        +  __init__(self, db:Db, relation:str):
+        +  del_by_id(self, id:int) -> None:
+        +  get_where(self, where:str) -> list:
+        +  change(self, dta:dict, id:id) -> None:
+    }
+
+    class Task{
+        +  __init__(self, db):
+        +  new(self, title:str, desc:str, cat_id:int, start='', end='') -> None:
+        +  get_all(self) -> list:
+    }
+
+    class Category{
+        +  __init__(self, db):
+        +  new(self, title:str) -> None:
+        +  get_all(self) -> list:
+
+    }
 ```
 
 
