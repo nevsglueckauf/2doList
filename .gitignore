@@ -176,3 +176,4 @@ cython_debug/
 #local stuff
 grube.py
 .DS_Store
+data/2do_list.db
