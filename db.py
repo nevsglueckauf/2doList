@@ -7,7 +7,7 @@ class Db:
     
     def __init__(self):
         
-        self.conn = sqlite3.connect('data/2do.db', autocommit=True)
+        self.conn = sqlite3.connect('data/2do_list.db', autocommit=True)
         self.conn.row_factory = sqlite3.Row 
 
         self.crs  = self.conn.cursor()
@@ -62,9 +62,9 @@ class Generic():
             print(k,v)
             tmp.append(k + " = '" + str(v) + "'") 
         tpl += ', '.join(tmp)
-        tpl += f" WHERE id={id}"
-        print(tpl)
-        self.db.crs.execute(tpl)
+        tpl += f" WHERE id=?"
+        #print(tpl)
+        self.db.crs.execute(tpl, [id])
     
     
 class Category():

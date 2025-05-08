@@ -11,9 +11,9 @@ db = Db()
 cat = Category(db)
 g = Generic(db, 'task')
 
-foo = {'description': 'New description under the block', 'end_dt': '2025-12-09', 'category_id': 2, 'start_dt': '2025-12-09'}
+foo = {'title': 'Foyer des Arts: 1989: Was ist super? (live)','description': 'Sehr schwierig zu bekommen - auf Vinyl, oder CD. Digital - z.B. YT: kein Problem', 'end_dt': '2075-12-09', 'category_id': 4, 'start_dt': '2025-12-09'}
 
-g.change(foo, 1)
+g.change(foo, 7)
 
 #g.del_by_id(5);
 dta = g.get_where('id < 99')
