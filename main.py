@@ -1,10 +1,23 @@
 from db import Db
-my_db = Db()
+from db import Category
+from db import Task
 
-dta = my_db.exec('SELECT * FROM category').get_all()
-#dta = my_db
-print(dta, type(dta))
+db = Db()
+cat = Category(db)
+cat.new('Foo')
+tsk = Task(db)
+dta = tsk.get_all();
+
 for item in dta:
-    print(item['id'], item['title'])
+    print(dict(item))
+
     
-#print(my_db.get_by_id('category', 2))
+tsk.new(title='PF _ tdsotm', cat_id=4, desc='Höchstens 55€!!', start='2025-09-01', end='2025-09-11')
+
+
+
+    
+dta = cat.get_all();
+
+for item in dta:
+    print(dict(item))
