@@ -179,3 +179,6 @@ grube.py
 data/2do_list.db
 *.sqlite3
 *.db
+foo.sh
+dj/
+*.BAK
