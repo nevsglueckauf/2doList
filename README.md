@@ -1,9 +1,6 @@
 # To do list / Projektarbeit 
 
-- Python
-- SQLITE3
-- panda 2.2.3
-- Django 4.0.2 //  streamlit 1.45.0
+
 
 
 ## Screenshots
@@ -18,3 +15,11 @@
 ## Eingabeformular online
 
 https://schrodt.nrw/task.tpl.htmlgit status
+
+## Systemumgebung
+
+- Python
+- SQLITE3
+- panda 2.2.3
+- Django 4.0.2 //  streamlit 1.45.0
+
