@@ -9,7 +9,7 @@
 </html>
 
 <body>
-  <form action="foo.php">
+  <form action="/a_page" method ="post">
     <fieldset>
       <legend>
         <h2>Eintrag::</h2>
@@ -17,15 +17,17 @@
 
       <label for="title">Name</label>
       <input type="text" name="title" title="Name für den Eintrag">
+      <br>
       <label for="decription">Beschreibung</label>
       <input type="text" name="decription">
+      <br>
 
-
-      <label for="" start_dt">Startdatum</label>
+      <label for="start_dt">Startdatum</label>
       <input type="date" value="2025-05-09" name="start_dt">
-      <label for="" start_dt">Startdatum</label>
+      <br>
+      <label for="start_dt">Startdatum</label>
       <input type="date" value="2025-05-09" name="start_dt">
-
+<br>
 
 
       <label for="priority" title">Priorität</label>
@@ -37,7 +39,7 @@
         <option value="5" style="color:green">E</option>
 
       </select>
-
+<br>
       <label for="category" title">Kategorie</label>
       <select name="category">
         <option value="1" style="color:red">Allgemein</option>

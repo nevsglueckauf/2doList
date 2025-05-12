@@ -117,6 +117,10 @@ class Task():
         self.db.res = self.db.crs.execute("SELECT * FROM " + self.relation)
         return self.db.get_all()
     
+    def get_mandatory(self) -> list:
+        self.db.res = self.db.crs.execute("SELECT title, description, category_id, status FROM " + self.relation)
+        return self.db.get_all()
+    
     
     
     
