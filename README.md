@@ -7,6 +7,7 @@
 
 
 ## Screenshots
+![Start.](hp.png "Start.")
 
 ![Neu anlegen Kat.](cat.png "Neu anlegen Kat.")
 
@@ -16,4 +17,4 @@
 
 ## Eingabeformular online
 
-https://schrodt.nrw/task.tpl.html
+https://schrodt.nrw/task.tpl.htmlgit status
