@@ -7,6 +7,8 @@
 
 ## Screenshots
 
+![Neu anlegen Kat.](cat.png "Neu anlegen Kat.")
+
 ![Neu anlegen](task.png "Neu anlegen")
 
 ![Liste](liste.png "Liste")
