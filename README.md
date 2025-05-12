@@ -14,7 +14,7 @@
 
 ## Eingabeformular online
 
-https://schrodt.nrw/task.tpl.htmlgit status
+https://schrodt.nrw/task.tpl.html
 
 ## Systemumgebung
 
