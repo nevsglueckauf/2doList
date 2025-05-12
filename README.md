@@ -2,7 +2,8 @@
 
 - Python
 - SQLITE3
-- Django 4.0.2
+- panda 2.2.3
+- Django 4.0.2 //  streamlit 1.45.0
 
 
 ## Screenshots
@@ -13,6 +14,6 @@
 
 ![Liste](liste.png "Liste")
 
-## Eingabeformular
+## Eingabeformular online
 
 https://schrodt.nrw/task.tpl.html
