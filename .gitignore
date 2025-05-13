@@ -182,3 +182,5 @@ data/2do_list.db
 foo.sh
 dj/
 *.BAK
+foo.*
+tmp/

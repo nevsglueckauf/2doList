@@ -4,7 +4,7 @@
 ## Persistenzschicht SQLite
 
 - Portabel (1 Datei)
-- 
+-    
 
 ## Klassen
 ```mermaid

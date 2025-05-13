@@ -28,7 +28,6 @@ INSERT INTO task VALUES(2,0,'foo','Do foo with bar','PENDING','2025-05-08 08:57:
 INSERT INTO task VALUES(3,0,'Kim Wilde - Cambodia','Höchstens 55€!!','PENDING','2025-05-08 10:43:28','2025-09-01','2025-09-11',4);
 INSERT INTO task VALUES(5,0,'Skinny Puppy - Remission & Bites','Höchstens 1000€!!','DONE','2025-05-08 10:45:01','2025-09-01','2025-09-11',4);
 INSERT INTO task VALUES(7,0,'Legendary Pink Dots - Shadow weaver','Höchstens 1000€!!','PENDING','2025-05-08 11:27:20','2025-09-01','2025-09-11',4);
-INSERT INTO task VALUES(8,0,'Legendary Pink Dots - Shadow weaver','Höchstens 1000€!!','PENDING','2025-05-08 11:32:59','2025-09-01','2025-09-11',4);
 INSERT INTO task VALUES(9,0,'Beatles - White Album','Höchstens 1100€!!','PENDING','2025-05-08 11:34:18','2025-09-01','2025-09-11',4);
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('category',12);
