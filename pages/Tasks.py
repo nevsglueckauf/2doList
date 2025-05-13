@@ -33,7 +33,7 @@ st.markdown('# Taskliste')
 de_keys = ['Titel', 'Beschreibung', 'KatId', 'Status', 'id', 'Start', 'Ende']
 df = pd.DataFrame(list(li), columns=de_keys)
 df['Kategorie'] = df['KatId'].apply(lambda x: cat_nm[x]) 
-
+df['Action'] = df['Status'].apply(lambda x: True if x =='DONE' else (False)) 
 query = st.text_input("Datenfilter")
 status_fil = ctrl.get_status()
 
@@ -49,11 +49,11 @@ if status_fil:
         df = df[df['Status'] == status_fil]
     
     
-edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende'))
+edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende', 'Action'))
 
 
 
-st.html('<a href="/task" class="button">Neuer Eintrag</a>')
+st.html('<a href="/Task_Neu" class="button">Neuer Eintrag</a>')
 # task = Task(db=db)
 # li = task.get_mandatory()
 # df = pd.DataFrame(list(li), columns=li[0].keys())
