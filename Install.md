@@ -20,3 +20,8 @@ source ~/.venv/todo/bin/activat
 # Hier exemplarisch in einer <var>.venv</var>
 <code>(todo) 2doList % </code> <kbd>python -m streamlit run streamlit_app.py& 2>&1 > /dev/null</kbd>
 
+### SQLite spez.
+
+<code>sven@Thanos %</code><kbd>sqlite3 2do_list.db .dump > curr_schema.sql</kbd>
+<br>
+<code>sven@Thanos %</code><kbd>sqlite3 2do_list.db < curr_schema.sql</kbd>
