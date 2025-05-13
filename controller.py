@@ -17,9 +17,9 @@ class Controller:
     def cat_list(self):
          self.gen = Generic(db=self.db, relation='Category')
          cats = self.gen.get_where('id <> 666')
-         df = pd.DataFrame(list(cats))
+         df = pd.DataFrame(list(cats), columns=['id', 'Titel'])
          #print(li);
-         self.st.dataframe(df, use_container_width=False)
+         self.st.dataframe(df,  hide_index=True, use_container_width=False)
             
     def task_list(self):
         
@@ -37,6 +37,10 @@ class Controller:
         for i in cats:
             cat_list.append(i['title'])   
         self.cat_lst = cat_list
+        
+    def get_status(self):
+        li = ['--', 'PENDING', 'DONE', 'IN_PROGRESS', 'CANCELLED', 'PAUSED']
+        return self.st.selectbox("Statusfilter", li)
         
         
     

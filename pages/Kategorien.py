@@ -5,8 +5,6 @@ from db import Task
 from controller import Controller
 
 st.set_page_config(page_title="Todo list", page_icon="📈")
-st.sidebar.success("Sidebar")
-st.sidebar.header("Aktuelle Liste")
 st.markdown('### Kategorien')
 db = Db()
 ctrl = Controller(db=db, st=st)

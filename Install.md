@@ -2,7 +2,7 @@
 
 ## Repo clonen
 <code>user@host % </code> <kbd>git clone https://github.com/nevsglueckauf/2doList</kbd>
-
+    
 <code>user@host % </code> <kbd>cd 2doList</kbd>
 
 ## VENV
@@ -26,12 +26,12 @@ Hier exemplarisch in einer <var>.venv</var>
 
 <code>(todo) 2doList % </code> <kbd>python -m streamlit run streamlit_app.py& 2>&1 > /dev/null</kbd>
 
-### SQLite spez.
+## SQLite spez.
 
-# SQL Dump erstellen
+### SQL Dump erstellen
 
 <code>user@host %</code><kbd>sqlite3 2do_list.db .dump > curr_schema.sql</kbd>
 
-# SQL Dump importieren
+### SQL Dump importieren
 
 <code>user@host %</code><kbd>sqlite3 2do_list.db < curr_schema.sql</kbd>

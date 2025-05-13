@@ -4,6 +4,10 @@
 
 
 ## Screenshots
+
+## Filter anwenden
+![Start.](filter_doppelt.png "Start.")
+
 ![Start.](hp.png "Start.")
 
 ![Neu anlegen Kat.](cat.png "Neu anlegen Kat.")
@@ -24,3 +28,6 @@ https://schrodt.nrw/task.tpl.html
 - Django 4.0.2 //  streamlit 1.45.0
 
 
+### Online ressource
+
+- https://blog.streamlit.io/auto-generate-a-dataframe-filtering-ui-in-streamlit-with-filter_dataframe/

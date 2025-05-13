@@ -13,9 +13,6 @@ for i in cats:
 
 st.set_page_config(page_title = title)
 
-st.sidebar.success("Sidebar")
-st.sidebar.header( title)
-
  
 
 with st.form("my_cat_form"):

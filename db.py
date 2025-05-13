@@ -36,6 +36,8 @@ class Db:
         
     def set_res(self, res):
         self.res
+        
+   
     
 class Generic():
     """ 
@@ -92,6 +94,11 @@ class Category():
     def get_all(self) -> list:
         self.db.res = self.db.crs.execute("SELECT * FROM " + self.relation)
         return self.db.get_all()
+    
+    def get_id(self, title:str):
+        for item in self.get_all():
+            if item['title'] == title:
+                return item['id']
     
 class Task():
     relation:str = 'task'

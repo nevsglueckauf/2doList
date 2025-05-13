@@ -22,4 +22,4 @@ toolbarMode = "auto"
 showSidebarNavigation = true
 [theme]
 primaryColor = "black"
-backgroundColor = "#efefef"
+backgroundColor = "#dedede"
