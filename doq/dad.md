@@ -1,5 +1,11 @@
 # Design & Architecture Dossier
 
+
+## Persistenzschicht SQLite
+
+- Portabel (1 Datei)
+- 
+
 ## Klassen
 ```mermaid
 classDiagram

@@ -1,5 +1,8 @@
 import sqlite3
 from typing import Any, Self,  Dict, List, Optional, Sequence, Tuple, Union
+""" TODO, FIXME:
+                    - Sanitizing all arguments
+"""
 
 class Db:
     conn: sqlite3.Connection
@@ -99,7 +102,7 @@ class Task():
         
     
     def new(self, title:str, desc:str, cat_id:int, start='', end='') -> None:
-        """nserting new item
+        """ Inserting new item
 
         FIXME: returning created id
 
