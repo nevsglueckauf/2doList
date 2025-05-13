@@ -39,7 +39,7 @@ class Controller:
         self.cat_lst = cat_list
         
     def get_status(self):
-        li = ['--', 'PENDING', 'DONE', 'IN_PROGRESS', 'CANCELLED', 'PAUSED']
+        li = ['Alle', 'PENDING', 'DONE', 'IN_PROGRESS', 'CANCELLED', 'PAUSED']
         return self.st.selectbox("Statusfilter", li)
         
         

@@ -45,7 +45,7 @@ if query:
 if status_fil:
     # mask = df.apply(lambda x: x)
     #df = df[df['status'] == 'DONE']
-    if status_fil != '--':
+    if status_fil != 'Alle':
         df = df[df['Status'] == status_fil]
     
     
