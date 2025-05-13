@@ -100,6 +100,13 @@ class Category():
             if item['title'] == title:
                 return item['id']
     
+    def get_dict(self):
+        ret_dict = {}
+        for item in self.get_all():
+           ret_dict[item['id']] = item['title']
+        return ret_dict
+    
+    
 class Task():
     relation:str = 'task'
     gen:Generic
@@ -128,7 +135,7 @@ class Task():
         return self.db.get_all()
     
     def get_mandatory(self, where:str = '') -> list:
-        query = "SELECT title, description, category_id, status, id FROM " + self.relation
+        query = "SELECT title, description, category_id, status, id, start_dt, end_dt FROM " + self.relation
         
         if where != '':
             query += f' WHERE {where}'

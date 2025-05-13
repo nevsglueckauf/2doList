@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 from db import Db
 from db import Task
+from db import Category
 from controller import Controller
 
-st.set_page_config(page_title="Todo list", page_icon="📈")
+st.set_page_config(page_title="Tasks", page_icon="📈")
 #st.sidebar.success("Sidebar")
 #st.sidebar.header("Aktuelle Liste")
 
@@ -17,14 +18,21 @@ st.set_page_config(page_title="Todo list", page_icon="📈")
 # )
 db = Db()
 task = Task(db)
+cat = Category(db)
 ctrl = Controller(db=db, st=st)
+cat_nm = cat.get_dict()
 
 li = task.get_mandatory()
+
+def rich(item):
+    return 2*item
+
 # ['title', 'description', 'category_id', 'status', 'id']
 
 st.markdown('# Taskliste')
-de_keys = ['Titel', 'Beschreibung', 'Kategorie', 'Status', 'id']
+de_keys = ['Titel', 'Beschreibung', 'KatId', 'Status', 'id', 'Start', 'Ende']
 df = pd.DataFrame(list(li), columns=de_keys)
+df['Kategorie'] = df['KatId'].apply(lambda x: cat_nm[x]) 
 
 query = st.text_input("Datenfilter")
 status_fil = ctrl.get_status()
@@ -41,7 +49,7 @@ if status_fil:
         df = df[df['Status'] == status_fil]
     
     
-edited_df = st.data_editor(df, hide_index=True, use_container_width=True)
+edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende'))
 
 
 
