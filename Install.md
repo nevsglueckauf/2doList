@@ -5,8 +5,12 @@
 <code>UserName % </code> <kbd>cd 2doList</kbd>
 
 ## VENV
-# Hier exemplarisch an einem <var>Mac</var>
-source ~/.venv/todo/bin/activat
+Hier exemplarisch an einem <var>Mac</var>:
+
+<code>sven@Thanos 2doList % </code><kbd>source ~/.venv/todo/bin/activate</kbd>
+<br>
+<code>sven@Thanos (todo) 2doList % </code><kbd>sqlite3 2do_list.db < curr_schema.sql</kbd>
+
 --> eventuell VENV einrichten
 
 ## Dependencies auflösen
@@ -17,7 +21,8 @@ source ~/.venv/todo/bin/activat
 
 ## Start der App
 
-# Hier exemplarisch in einer <var>.venv</var>
+Hier exemplarisch in einer <var>.venv</var>
+
 <code>(todo) 2doList % </code> <kbd>python -m streamlit run streamlit_app.py& 2>&1 > /dev/null</kbd>
 
 ### SQLite spez.
