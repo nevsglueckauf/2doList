@@ -45,3 +45,8 @@ classDiagram
 
 ## Datebanknmodell (Persistenzschicht)
 ![Entity-Relationship Model](er.png "Entity-Relationship Model")
+
+
+## Filtering 
+
+!!

@@ -121,7 +121,7 @@ class Task():
         return self.db.get_all()
     
     def get_mandatory(self, where:str = '') -> list:
-        query = "SELECT title, description, category_id, status FROM " + self.relation
+        query = "SELECT title, description, category_id, status, id FROM " + self.relation
         
         if where != '':
             query += f' WHERE {where}'

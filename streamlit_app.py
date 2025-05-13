@@ -7,7 +7,7 @@ st.set_page_config(
 )
 st.sidebar.success("Sidebar")
 
-st.html('task.tpl.html')
+#st.html('task.tpl.html')
 # st.sidebar.success("Sidebar")
 
 # st.markdown(
