@@ -22,9 +22,12 @@ Hier exemplarisch an einem <var>Mac</var>:
 
 ## Start der App
 
+<code> % </code> <kbd>python -m streamlit run Todo_List_App.py </kbd>
+
+
 Hier exemplarisch in einer <var>.venv</var>
 
-<code>(todo) 2doList % </code> <kbd>python -m streamlit run streamlit_app.py& 2>&1 > /dev/null</kbd>
+<code>(todo) 2doList % </code> <kbd>python -m streamlit run Todo_List_App.py& 2>&1 > /dev/null</kbd>
 
 ## SQLite spez.
 
