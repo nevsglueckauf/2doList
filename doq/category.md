@@ -1,15 +1,3 @@
-## Screenshots
-
-![Kat. anzeigen](cat.png "Kat. anzeigen")
-
-![Kat. ändern](cat_edit.png "Kat. ändern")
-
-![Kat. speichern](cat_save.png "Kat. speichern")
-
-
-
-
-
 ## Anwendung Sequenzdiagramm Beispiel Kategorien
 
 ```mermaid
@@ -33,3 +21,11 @@ sequenceDiagram
 ### Auschnitt Quellcode (exemplarisch für Kategorie)
 
 ![Kat. Source](cat_source_1.png "Kat. Source")
+
+## Screenshots
+
+![Kat. anzeigen](cat.png "Kat. anzeigen")
+
+![Kat. ändern](cat_edit.png "Kat. ändern")
+
+![Kat. speichern](cat_save.png "Kat. speichern")

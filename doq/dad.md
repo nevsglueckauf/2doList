@@ -4,7 +4,21 @@
 ## Persistenzschicht SQLite
 
 - Portabel (1 Datei)
--    
+- Einfache Syntax
+
+
+
+
+
+## Datebanknmodell (Persistenzschicht)
+![Entity-Relationship Model](er.png "Entity-Relationship Model")
+
+
+## Filtering 
+
+![Filter](filter_doppelt_klein.png "filter")
+
+
 
 ## Klassen
 ```mermaid
@@ -48,50 +62,4 @@ classDiagram
         + get_status(self):
         + cat_parse_edited(self, df:pd.DataFrame):
     }
-```
-
-
-
-## Datebanknmodell (Persistenzschicht)
-![Entity-Relationship Model](er.png "Entity-Relationship Model")
-
-
-## Filtering 
-
-!!
-
-## Funktionsprinzip
-
-```mermaid
----
-id: 10f759dd-b168-480d-a9ac-33191da7734a
----
-sequenceDiagram
-    autonumber
-    create actor Server
-    UserAgent->>User: src/main.py
-    Note over User, Role_Window: Der Benutzer muss sich zunächst authentifizieren
-    User->>App: Start # Start der Applikation
-    App->>User: Bitte Login
-    
-    loop Login
-        User->>Auth: check(username, password)
-        Auth->>App: ok
-        
-        destroy Auth
-        App-xAuth: end()
-    
-    end
-   
-    Role_Window->>User: Rollenbasierte GUI-Ansicht
-    create actor G as Gast
-    Role_Window->>G: Zugriff als Gast
-    create actor A as Admin
-    Role_Window->>A: Zugriff als Admin
-    create actor S as Mitarbeiter
-    Role_Window->>S: Zugriff als Mitarbeiter
-    create actor M as Mitglied
-    Role_Window->>M: Zugriff als Mitglied
-    participant db as Persistenzschicht
-    App->>db: (anlegen, auflisten, speichern, ändern)
 ```
