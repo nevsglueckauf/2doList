@@ -1,12 +1,13 @@
-## Anwendung Sequenzdiagramm Anmeldung bis rollenbasierter GUI
+## Anwendung Sequenzdiagramm Beispiel Kategorien
 
 ```mermaid
 sequenceDiagram
     autonumber
-    UserAgent->>Webserver: https://host.exaample.com/Kategorien
-    Webserver-->>UserAgent:  Anzeige der Daten () 
+    UserAgent->>Webserver: https://host.example.com/Kategorien
+    Webserver-->>UserAgent:  Anzeige der Daten (Generiertes HTML) 
     UserAgent->>Webserver: Eingabe der Änderungen -> POST
-    Webserver-->>UserAgent:  diff(DF, DF_edit) --> generiere SQL Stmts (UPDATE ...) -> execute  
+    Webserver->>Python:  diff(DF, DF_edit) --> generiere SQL Stmts (UPDATE ...) 
+    Python->>DB  execute SQLs 
 ```
 
 
