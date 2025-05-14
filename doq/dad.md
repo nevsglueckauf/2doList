@@ -54,11 +54,13 @@ classDiagram
 ## Funktionsprinzip
 
 ```mermaid
+---
+id: 10f759dd-b168-480d-a9ac-33191da7734a
+---
 sequenceDiagram
     autonumber
-    create actor Browser
     create actor Server
-    Python->>User: src/main.py
+    UserAgent->>User: src/main.py
     Note over User, Role_Window: Der Benutzer muss sich zunächst authentifizieren
     User->>App: Start # Start der Applikation
     App->>User: Bitte Login
@@ -83,6 +85,4 @@ sequenceDiagram
     Role_Window->>M: Zugriff als Mitglied
     participant db as Persistenzschicht
     App->>db: (anlegen, auflisten, speichern, ändern)
-    
-    
 ```
