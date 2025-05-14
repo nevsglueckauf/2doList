@@ -7,9 +7,10 @@
 
 --> eventuell VENV einrichten
 
-## VENV
+## VENV einrichten/aktivieren
 Hier exemplarisch an einem <var>Mac</var>:
 
+<code>user@host 2doList % </code><kbd>python3 -m venv ~/.venv/todo</kbd>
 <code>user@host 2doList % </code><kbd>source ~/.venv/todo/bin/activate</kbd>
 
 
