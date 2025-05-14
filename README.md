@@ -2,9 +2,9 @@
 
 ## Interne Links
 
-- [Design & Architecture Dossier](/doq/dad)
-- [Installation](/doq/Installation)
-- [Allg. Funktionsweise Beispiel Kategorie](/doq/category)
+- [Design & Architecture Dossier](/doq/dad.md)
+- [Installation](/doq/Installation.md)
+- [Allg. Funktionsweise Beispiel Kategorie](/doq/category.md)
 
 ## Screenshots
 
