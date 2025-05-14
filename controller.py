@@ -23,7 +23,9 @@ class Controller:
         
          
          if self.st.button("Speichern"):
-            self.st.write("Datensatz gespeichert")
+            msg = "Datensatz gespeichert"
+            self.st.write(msg)
+            self.st.sidebar.success(msg)
             merged_df = pd.merge(df, edited, how='outer', indicator=True)
             self.cat_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
             
@@ -60,5 +62,5 @@ class Controller:
             tpl23 = f"UPDATE category SET title='{row.Titel}' WHERE id={row.id}"
             self.db.exec(tpl23)
             #self.db.exec(tpl, [row.id, row.Titel])
-            #print(tpl23)
+            print(tpl23)
             
