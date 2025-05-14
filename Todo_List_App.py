@@ -11,5 +11,6 @@ li = task.get_mandatory(where=" status <> 'DONE' ORDER BY end_dt ")
 df = pd.DataFrame(list(li), columns=li[0].keys())
 #print(li);
 #st.dataframe(df, use_container_width=False)
-st.markdown('178 angefangene Tasks')
+st.markdown('`178 angefangene Tasks`')
 
+    

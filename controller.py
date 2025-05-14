@@ -19,7 +19,13 @@ class Controller:
          cats = self.gen.get_where('id <> 666')
          df = pd.DataFrame(list(cats), columns=['id', 'Titel'])
          #print(li);
-         self.st.dataframe(df,  hide_index=True, use_container_width=False)
+         edited = self.st.data_editor(df,  hide_index=True, use_container_width=False)
+        
+         
+         if self.st.button("Speichern"):
+            self.st.write("Datensatz gespeichert")
+            merged_df = pd.merge(df, edited, how='outer', indicator=True)
+            self.cat_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
             
     def task_list(self):
         
@@ -43,4 +49,16 @@ class Controller:
         return self.st.selectbox("Statusfilter", li)
         
         
-    
+    def cat_parse_edited(self, df:pd.DataFrame):
+        
+        #print(df)
+        
+        #exit(66)
+        print('Writing to DB')
+        for row in df.itertuples():
+            #tpl = 'UPDATE category SET title=? WHERE id=?'
+            tpl23 = f"UPDATE category SET title='{row.Titel}' WHERE id={row.id}"
+            self.db.exec(tpl23)
+            #self.db.exec(tpl, [row.id, row.Titel])
+            #print(tpl23)
+            
