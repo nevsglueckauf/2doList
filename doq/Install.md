@@ -1,4 +1,4 @@
-# 
+# Hinweise zur Installation
 
 ## Repo clonen
 <code>user@host % </code> <kbd>git clone https://github.com/nevsglueckauf/2doList</kbd>

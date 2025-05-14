@@ -12,7 +12,11 @@ class Controller:
         self.st = st
         self.task = Task(db=self.db)
         self.cat = Category(db=self.db)
-        #
+ 
+        
+    def meta(self, title:str='', icon:str=''):
+        self.st.set_page_config(page_title = title, page_icon=icon)
+        self.st.markdown('# ' + title)
         
         
     def cat_list(self):
@@ -38,10 +42,6 @@ class Controller:
         li = self.task.get_mandatory()
         df = pd.DataFrame(list(li), columns=li[0].keys())
         edited_df = self.st.data_editor(df)
-
-        #df['work'] = '<a href="/work.py?id=' + str(df['id']) + '">bearb.</a>'
-        #print(li);
-        #self.st.dataframe(df, use_container_width=False)
         
     def task_new(self):
         cats = self.cat.get_all()
@@ -57,7 +57,6 @@ class Controller:
         
     def cat_parse_edited(self, df:pd.DataFrame):
         for row in df.itertuples():
-            #tpl = 'UPDATE category SET title=? WHERE id=?'
             tpl23 = f"UPDATE category SET title='{row.Titel}' WHERE id={row.id}"
             self.db.exec(tpl23)
             #self.db.exec(tpl, [row.id, row.Titel])

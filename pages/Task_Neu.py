@@ -6,12 +6,9 @@ from db import Task
 from controller import Controller
 
 
-
-title = "Task anlegen 📝"
-st.set_page_config(page_title=title, page_icon="📜")
 db = Db()
 ctrl = Controller(db=db, st=st)
-
+ctrl.meta(title = 'Task anlegen', icon='📝')
 
 category = Category(db)
 cats = category.get_all()
@@ -20,10 +17,7 @@ for i in cats:
   cat_list.append(i['title'])
 
 
-st.markdown('# ' + title) 
-
 with st.form("my_form"):
-   st.write(title)
    n_title = st.text_input('Titel:', '')
    n_description = st.text_input('Beschreibung:', '')
    n_start = st.date_input('Startdatum', format="DD.MM.YYYY",)
@@ -34,11 +28,8 @@ with st.form("my_form"):
 
   
 
-# This is outside the form
 if submitted:
   cat_id= category.get_id(cat)
   task = Task(db)
   task.new(title=n_title, desc=n_description, cat_id=cat_id, start=n_start, end=n_end)
-  #st.write(n_title + ' wurde angelegt')
-  #st.write(cat + ' wurde ausgewählt' + str(cat_id))
   ctrl.save_success()

@@ -4,8 +4,9 @@ from db import Db
 from db import Task
 from controller import Controller
 
-st.set_page_config(page_title="Kategorien - Todo list", page_icon="📜")
-st.markdown('### Kategorien')
 db = Db()
+
 ctrl = Controller(db=db, st=st)
+ctrl.meta(title='Kategorien', icon='📜')
+
 ctrl.cat_list()
