@@ -1,3 +1,4 @@
+import streamlit # type: ignore
 import pandas as pd
 from db import Db
 from db import Category
@@ -6,7 +7,7 @@ from db import Generic
 
 
 class Controller:
-    def __init__(self, db:Db, st):
+    def __init__(self, db:Db, st:streamlit):
         self.db = Db()
         self.st = st
         self.task = Task(db=self.db)
@@ -16,19 +17,21 @@ class Controller:
         
     def cat_list(self):
          self.gen = Generic(db=self.db, relation='Category')
-         cats = self.gen.get_where('id <> 666')
+         cats = self.cat.get_all()
          df = pd.DataFrame(list(cats), columns=['id', 'Titel'])
-         #print(li);
          edited = self.st.data_editor(df,  hide_index=True, use_container_width=False)
         
          
          if self.st.button("Speichern"):
-            msg = "Datensatz gespeichert 💾"
-            self.st.write(msg)
-            self.st.sidebar.success(msg)
+            self.save_success()
             merged_df = pd.merge(df, edited, how='outer', indicator=True)
             self.cat_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
-            
+
+    def save_success(self):
+            msg = "Daten gespeichert 💾"
+            self.st.write(msg)
+            self.st.sidebar.success(msg)          
+              
     def task_list(self):
         
         li = self.task.get_mandatory()
@@ -52,11 +55,6 @@ class Controller:
         
         
     def cat_parse_edited(self, df:pd.DataFrame):
-        
-        #print(df)
-        
-        #exit(66)
-        print('Writing to DB')
         for row in df.itertuples():
             #tpl = 'UPDATE category SET title=? WHERE id=?'
             tpl23 = f"UPDATE category SET title='{row.Titel}' WHERE id={row.id}"
@@ -64,3 +62,28 @@ class Controller:
             #self.db.exec(tpl, [row.id, row.Titel])
             print(tpl23)
             
+    def task_parse_edited(self, df:pd.DataFrame):
+        self.save_success()
+        
+        # Titel Beschreibung  KatId   Status  id       Start        Ende    Kategorie  Action      _merge
+        # 4   Foo   Bar techn.      4  PENDING  10  2025-05-12  2025-05-29  Plattenkauf   False  right_only
+
+        
+        
+        # print('Writing to DB')
+        for row in df.itertuples():
+            #tpl = 'UPDATE task SET title=? WHERE id=?'
+            tpl23 = f"UPDATE task SET title='{row.Titel}'," 
+            tpl23 += f" description='{row.Beschreibung}',"
+            tpl23 += f" status='{row.Status}',"
+            tpl23 += f" start_dt='{row.Start}',"
+            tpl23 += f" end_dt='{row.Ende}',"
+            tpl23 += f" category_id='{row.KatId}'"
+            tpl23 += f" WHERE id={row.id}"
+            
+            print(tpl23)
+            #exit(23)
+            
+            self.db.exec(tpl23)
+            #self.db.exec(tpl, [row.id, row.Titel])
+    
