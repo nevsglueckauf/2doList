@@ -1,7 +1,10 @@
 # To do list / Projektarbeit 
 
+## Interne Links
 
-
+- [Design & Architecture Dossier](/doq/dad)
+- [Installation](/doq/Installation)
+- [Allg. Funktionsweise Beispiel Kategorie](/doq/category)
 
 ## Screenshots
 
@@ -14,16 +17,13 @@
 
 ![Liste](doq/liste.png "Liste")
 
-## Eingabeformular online
-
-https://schrodt.nrw/task.tpl.html
 
 ## Systemumgebung
 
 - Python
 - SQLITE3
 - panda 2.2.3
-- Django 4.0.2 //  streamlit 1.45.0
+- <del>Django 4.0.2 </del>//  <ins>streamlit 1.45.0</ins>
 
 
 ### Online ressource

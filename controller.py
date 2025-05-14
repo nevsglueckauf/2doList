@@ -24,6 +24,7 @@ class Controller:
          
          if self.st.button("Speichern"):
             self.save_success()
+            # Hint zum Merge:   how='outer' -> UNION der Keys; indicator=True -> ['_merge'] ('left_only', 'right_only', 'both')
             merged_df = pd.merge(df, edited, how='outer', indicator=True)
             self.cat_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
 
