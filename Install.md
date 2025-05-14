@@ -5,14 +5,20 @@
     
 <code>user@host % </code> <kbd>cd 2doList</kbd>
 
+--> eventuell VENV einrichten
+
 ## VENV
 Hier exemplarisch an einem <var>Mac</var>:
 
 <code>user@host 2doList % </code><kbd>source ~/.venv/todo/bin/activate</kbd>
-<br>
-<code>user@host (todo) 2doList % </code><kbd>sqlite3 2do_list.db < curr_schema.sql</kbd>
 
---> eventuell VENV einrichten
+
+Hier an einer Wintendo-Box:
+
+<code>PS C:\Users\Foo\2doList</code><kbd>python -m venv C:\path_to\venv</kbd>
+<code>PS C:\Users\Foo\2doList</code><kbd>C:\path_to\venv\Scripts\Activate.ps1</kbd>
+
+
 
 ## Dependencies auflösen
 <code>2doList % </code> <kbd>pip install -r req.txt</kbd>
@@ -38,3 +44,5 @@ Hier exemplarisch in einer <var>.venv</var>
 ### SQL Dump importieren
 
 <code>user@host %</code><kbd>sqlite3 2do_list.db < curr_schema.sql</kbd>
+
+ 

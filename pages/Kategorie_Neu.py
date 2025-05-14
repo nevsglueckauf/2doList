@@ -3,7 +3,7 @@ import pandas as pd
 from db import Db
 from db import Category
 
-title = "Kategorie anlegen"
+title = "Kategorie anlegen 📝"
 db = Db()
 category = Category(db)
 cats = category.get_all()

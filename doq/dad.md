@@ -39,6 +39,15 @@ classDiagram
         +  get_all(self) -> list:
 
     }
+
+    class Controller{
+        + __init__(self, db:Db, st):
+        + cat_list(self):
+        + task_list(self):
+        + task_new(self):
+        + get_status(self):
+        + cat_parse_edited(self, df:pd.DataFrame):
+    }
 ```
 
 

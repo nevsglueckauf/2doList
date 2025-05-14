@@ -23,7 +23,7 @@ class Controller:
         
          
          if self.st.button("Speichern"):
-            msg = "Datensatz gespeichert"
+            msg = "Datensatz gespeichert 💾"
             self.st.write(msg)
             self.st.sidebar.success(msg)
             merged_df = pd.merge(df, edited, how='outer', indicator=True)

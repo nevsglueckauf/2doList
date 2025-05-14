@@ -5,7 +5,7 @@ from db import Task
 from db import Category
 from controller import Controller
 
-st.set_page_config(page_title="Tasks", page_icon="📈")
+st.set_page_config(page_title="Tasks", page_icon="📜")
 #st.sidebar.success("Sidebar")
 #st.sidebar.header("Aktuelle Liste")
 
@@ -47,13 +47,16 @@ if status_fil:
     #df = df[df['status'] == 'DONE']
     if status_fil != 'Alle':
         df = df[df['Status'] == status_fil]
-    
+
+
     
 edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende', 'Action'))
 
+if st.button("Speichern"):
+            msg = "Daten gespeichert 💾"
+            st.sidebar.success(msg)
 
-
-st.html('<a href="/Task_Neu" class="button">Neuer Eintrag</a>')
+#st.html('<button onclick="location.href=\'/Task_Neu\'"> Neuer Eintrag </button>')
 # task = Task(db=db)
 # li = task.get_mandatory()
 # df = pd.DataFrame(list(li), columns=li[0].keys())

@@ -2,7 +2,7 @@ import streamlit as st
 from db import Db
 from db import Category
 from db import Task
-title = "Task anlegen"
+title = "Task anlegen 📝"
 db = Db()
 
 
