@@ -1,3 +1,13 @@
+## Screenshots
+
+![Kat. anzeigen](cat.png "Kat. anzeigen")
+![Kat. ändern](cat_edit.png "Kat. ändern")
+![Kat. speichern](cat_save.png "Kat. speichern")
+
+
+
+
+
 ## Anwendung Sequenzdiagramm Beispiel Kategorien
 
 ```mermaid
@@ -12,12 +22,6 @@ sequenceDiagram
     Python-->Webserver: "Aktualisiere Ansicht"
     Webserver-->>UserAgent: "Anzeige der Daten (Generiertes HTML)" 
 ```
-
-![Kat. anzeigen](cat.png "Kat. anzeigen")
-![Kat. ändern](cat_edit.png "Kat. ändern")
-![Kat. speichern](cat_save.png "Kat. speichern")
-
-
 
 ### <dl>
 <dt>UserAgent</dt> 
