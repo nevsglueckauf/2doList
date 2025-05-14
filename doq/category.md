@@ -8,7 +8,7 @@ sequenceDiagram
     UserAgent->>Webserver: "Eingabe der Änderungen -> POST"
     Webserver->>Python:  "diff(DF, DF_edit) --> generiere SQL Stmts (UPDATE ...)" 
     Python->>DB:  "execute SQLs"
-    Db-->>Python: "Ok"
+    DB-->>Python: "Ok"
     Python-->Webserver: "Aktualisiere Ansicht"
     Webserver-->>UserAgent: "Anzeige der Daten (Generiertes HTML)" 
 ```
