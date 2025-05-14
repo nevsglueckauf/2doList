@@ -6,15 +6,13 @@
 ## Screenshots
 
 ## Filter anwenden
-![Start.](filter_doppelt.png "Start.")
+![Start.](doq/filter_doppelt.png "Start.")
 
-![Start.](hp.png "Start.")
+![Neu anlegen Kat.](doq/cat.png "Neu anlegen Kat.")
 
-![Neu anlegen Kat.](cat.png "Neu anlegen Kat.")
+![Neu anlegen](doq/task.png "Neu anlegen")
 
-![Neu anlegen](task.png "Neu anlegen")
-
-![Liste](liste.png "Liste")
+![Liste](doq/liste.png "Liste")
 
 ## Eingabeformular online
 

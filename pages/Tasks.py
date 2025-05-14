@@ -40,7 +40,7 @@ if status_fil:
 
 
     
-edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende', 'Action'))
+edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Action', 'Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende'))
 
 if st.button("Speichern"):
             merged_df = pd.merge(df, edited_df, how='outer', indicator=True)
