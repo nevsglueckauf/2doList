@@ -1,7 +1,13 @@
 ## Anwendung Sequenzdiagramm Anmeldung bis rollenbasierter GUI
+
+<dl>
+<dt>UserAgent</dt> 
+<dd>HTTP-Client, z.B: Browser</dd>
+</dl>
 ```mermaid
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
+    UserAgent->>Webserver: https://host.exaample.com/Kategorien
+    Webserver-->>UserAgent:  Anzeige der Daten () 
+    UserAgent->>Webserver: Eingabe der Änderungen -> POST
+    Webserver-->>UserAgent:  diff(DF, DF_edit) --> generiere SQL Stmts (UPDATE ...) -> execute  
 ```
