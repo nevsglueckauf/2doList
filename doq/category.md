@@ -29,3 +29,7 @@ sequenceDiagram
 <dt>UserAgent</dt> 
 <dd>HTTP-Client, z.B: Browser</dd>
 </dl>
+
+### Auschnitt Quellcode (exemplarisch für Kategorie)
+
+![Kat. Source](source_cat.png "Kat. Source")
