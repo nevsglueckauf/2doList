@@ -1,0 +1,63 @@
+.
+├── __pycache__
+│   ├── controller.cpython-313.pyc
+│   ├── db.cpython-313.pyc
+│   └── hello.cpython-313.pyc
+├── controller.py
+├── create_db.sh
+├── data
+│   ├── 2do_list.db
+│   ├── curr_schema.sql
+│   ├── current_20250514T1405.sql
+│   ├── schema.sql
+│   └── test.db
+├── db.py
+├── doq
+│   ├── cat_edit.png
+│   ├── cat_save.png
+│   ├── cat_source_1.png
+│   ├── cat.png
+│   ├── category.md
+│   ├── dad.md
+│   ├── er.png
+│   ├── filter_doppelt_klein.png
+│   ├── filter_doppelt.png
+│   ├── Install.md
+│   ├── liste.png
+│   ├── source_cat.png
+│   ├── task.png
+│   └── tree.txt
+├── exkurs_html
+│   ├── body.html
+│   └── html.jpg
+├── gr23.py
+├── grube.py
+├── LICENSE
+├── main.py
+├── pages
+│   ├── Kategorie_Neu.py
+│   ├── Kategorien.py
+│   ├── sub
+│   │   └── a_page.py
+│   ├── Task_Neu.py
+│   └── Tasks.py
+├── README.md
+├── req.txt
+├── start.bat
+├── start.sh
+├── test
+│   └── test_basix.py
+├── tmp
+│   ├── foo.md
+│   ├── foo.php
+│   ├── foo.sh
+│   ├── foo.sql
+│   ├── form.css
+│   ├── form.css.BAK
+│   ├── mcp.png
+│   ├── streamlit_app.py
+│   ├── task.tpl.html
+│   └── task.tpl.html.BAK
+└── Todo_List_App.py
+
+8 directories, 52 files

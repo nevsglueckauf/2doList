@@ -41,14 +41,13 @@ if status_fil:
 
     
 edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Action', 'Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende'))
-
+li = db.exec("SELECT count(*) as amount FROM task where status <> 'DONE' ").get()
+#df = pd.DataFrame(list(li), columns=li[0].keys())
+#print();
+#st.dataframe(df, use_container_width=False)
+st.markdown('`' + str(li['amount']) + ' angefangene Tasks`')
 if st.button("Speichern"):
             merged_df = pd.merge(df, edited_df, how='outer', indicator=True)
             ctrl.task_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
 
-#st.html('<button onclick="location.href=\'/Task_Neu\'"> Neuer Eintrag </button>')
-# task = Task(db=db)
-# li = task.get_mandatory()
-# df = pd.DataFrame(list(li), columns=li[0].keys())
-# #print(li);
-# st.dataframe(df, use_container_width=False)
+st.html('<a href="Task_Neu">Neuer Eintrag</a>')
