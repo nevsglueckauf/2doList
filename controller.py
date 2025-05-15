@@ -40,7 +40,7 @@ class Controller:
     def task_list(self):
         
         li = self.task.get_mandatory()
-        df = pd.DataFrame(list(li), columns=li[0].keys())
+        df = pd.DataFrame(list(li), columns=['Titel', 'Beschreibung', 'KatId', 'Status', 'id', 'Start', 'Ende'])
         edited_df = self.st.data_editor(df)
         
     def task_new(self):
