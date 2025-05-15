@@ -31,11 +31,7 @@ class Db:
         self.res = self.crs.execute("SELECT * FROM " + rel + " WHERE id = ?", [id])
         return self.res.fetchone()
     
-    def __del__(self):
-        self.conn.close()
-        
-    def set_res(self, res):
-        self.res
+    
         
    
     
