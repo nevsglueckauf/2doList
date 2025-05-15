@@ -23,7 +23,7 @@ status_fil = ctrl.get_status()
 
 
 if query:
-    mask = df.applymap(lambda x: query in str(x).lower()).any(axis=1)
+    mask = df.map(lambda x: query in str(x).lower()).any(axis=1)
     df = df[mask]
 
 if status_fil:
@@ -34,10 +34,12 @@ if status_fil:
 
     
 edited_df = st.data_editor(df, hide_index=True, use_container_width=True, column_order=('Action', 'Titel', 'Beschreibung', 'Kategorie', 'Status', 'Start', 'Ende'))
-li = db.exec("SELECT count(*) as amount FROM task where status <> 'DONE' ").get()
 
-st.markdown('`' + str(li['amount']) + ' angefangene Tasks`')
-if st.button("Speichern"):
+#cnt = db.exec("SELECT count(*) as amount FROM task where status <> 'DONE' ").get()
+#st.markdown('`' + str(cnt['amount']) + ' angefangene Tasks`')
+saved = st.button("Speichern")
+
+if saved:
             merged_df = pd.merge(df, edited_df, how='outer', indicator=True)
             ctrl.task_parse_edited(merged_df[merged_df['_merge'] == 'right_only'])
 

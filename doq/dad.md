@@ -81,8 +81,12 @@ SUM:                            33            303             85            876
 
 ## Persistenzschicht SQLite
 
-- Portabel (1 Datei)
+- Portabel (1 Datei; 1 Repo)
 - Einfache Syntax
+- Ressourcen werden "nur" auf dem (Smart)-Client verbraucht
+- Keine (Inter-) Netzwerkverbindung notwendig: lokal lauffähig 
+
+### 
 
 ### Queries
 <pre>

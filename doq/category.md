@@ -20,7 +20,7 @@ sequenceDiagram
 
 ### Auschnitt Quellcode (exemplarisch für Kategorie)
 
-![Kat. Source](cat_source_1.png "Kat. Source")
+![Kat. Source](ctrl_code.png "Kat. Source")
 
 ## Screenshots
 

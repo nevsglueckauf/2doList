@@ -62,6 +62,14 @@ class Controller:
             #self.db.exec(tpl, [row.id, row.Titel])
             print(tpl23)
             
+            
+    def cat_parse_edited_pp(self, df:pd.DataFrame):
+        for row in df.itertuples():
+            q = "UPDATE category SET title=? WHERE id=?"
+            self.db.exec(q, [row.id, row.Titel])
+            return self
+            
+            
     def task_parse_edited(self, df:pd.DataFrame):
         self.save_success()
         

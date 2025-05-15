@@ -15,10 +15,6 @@ cat_list=[]
 for i in cats:
   cat_list.append(i['title'])
 
-
-
-
-
 with st.form("my_cat_form"):
    n_title = st.text_input('Titel:', '')
    submitted = st.form_submit_button('Anlegen')

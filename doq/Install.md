@@ -8,15 +8,15 @@
 --> eventuell VENV einrichten
 
 ## VENV einrichten/aktivieren
-Hier exemplarisch an einem <var>Mac</var>:
+Hier exemplarisch an einem <kbd>Mac</kbd>:
 
-<code>user@host 2doList % </code><kbd>python3 -m venv ~/.venv/todo</kbd>
+<code>user@host 2doList % </code><kbd>python3 -m venv ~/.venv/todo</kbd><br>
 <code>user@host 2doList % </code><kbd>source ~/.venv/todo/bin/activate</kbd>
 
 
-Hier an einer Wintendo-Box:
+Hier an einer <kbd>Wintendo</kbd>-Box:
 
-<code>PS C:\Users\Foo\2doList</code><kbd>python -m venv C:\path_to\venv</kbd>
+<code>PS C:\Users\Foo\2doList</code><kbd>python -m venv C:\path_to\venv</kbd><br>
 <code>PS C:\Users\Foo\2doList</code><kbd>C:\path_to\venv\Scripts\Activate.ps1</kbd>
 
 

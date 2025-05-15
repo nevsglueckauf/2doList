@@ -129,3 +129,5 @@ foo.*
 tmp/
 grube.py
 gr23.py
+sql.md
+dml_etc.png

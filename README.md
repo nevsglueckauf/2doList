@@ -1,5 +1,11 @@
 # To do list / Projektarbeit 
 
+
+## FIXME/left to do
+
+- Umstellung auf konsequente Nutzung aller App-Partlets von <code>controller.py</code>
+- SQL INjection --> we use Prep. stmts!
+
 ## Interne Links
 
 - [Design & Architecture Dossier](/doq/dad.md)
