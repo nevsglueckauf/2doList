@@ -1,5 +1,16 @@
 # SQL 
 
+
+-    Data Query Language (DQL) Abfrage von Daten
+-    Data Manipulation Language (DML) Bearbeitung von Daten
+-    Data Definition Language (DDL) Definition / Strukturierung von Daten
+-    Data Control Language (DCL)  Verwaltung / Steuerung der Datenbank
+-    außerdem: (weiter unten)
+    * Transaction Control Language (TCL) Transaktionssteuerung
+
+
+
+
 ``` mermaid
 %%{init: "quadrantChart": {"chartWidth": 1650, "chartHeight": 700}, 
          "themeVariables": {"quadrant1TextFill": "#ff0000",
@@ -17,7 +28,7 @@ quadrantChart
     quadrant-1 DDL 
     quadrant-2 DML
     quadrant-3 DCL
-    quadrant-4 TCL
+    quadrant-4 DQL
     
     INSERT: [0.25, 0.9] color: #00ff33, radius: 0
     UPDATE: [0.25, 0.85] color:  #00ff33, radius: 0
@@ -33,17 +44,16 @@ quadrantChart
 
     GRANT : [0.25, 0.4] color: #ffffff,  radius: 0
     REVOKE: [0.25, 0.35] color: #ffffff,  radius: 0
+
+    SELECT: [0.75, 0.4] color: #ffff00, radius: 0
     
     
-    BEGIN TRANSACTION: [0.75, 0.4] color: #ffff00, radius: 0
-    COMMIT : [0.75, 0.35] color: #ffff00,  radius: 0
-    ROLLBACK: [0.75, 0.3] color: #ffff00,  radius: 0
-    SAVEPOINT : [0.75, 0.25] color: #ffff00,  radius: 0
-    SET TRANSACTION: [0.75, 0.2] color: #ffff00, radius: 0
 
 ```
+## Transaktionen (manchmal <em><abbr title="Transaction Control Language">TCL</em> - </abbr> genannt)
+    - COMMIT
+    - ROLLBACK
+    - SAVEPOINT
+    - SET TRANSACTION
 
-
-<br><br><br><br><br><br><br><br><hr>
-<p><small>[^radio] - LPWA: low power wide area; BT: Bluetooth
-[^hlt] - HLT_ Halbleitertechnik</small></p>
+ 
